@@ -17,6 +17,7 @@ func returnString(value string, length int) {}
 //export getCompletionItems
 func getCompletionItems(input string) {
  result := Parse(input)
+ fmt.Println(result.String())
  returnString(result.String(), len(result.String()))
 }
 
@@ -39,6 +40,7 @@ func Parse(s string) Query {
 	q := visitor.Visit(p.Query()).(Query)
 	return q
 }
+
 
 /***********************************
 	Visitor implementaion
